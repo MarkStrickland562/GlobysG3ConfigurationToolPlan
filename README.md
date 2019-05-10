@@ -20,7 +20,8 @@ The _Globys G3 Configuration Tool_ is a prototype project for developing a confi
 
 At the very least, the project will use Firebase for data persistence and project deployment with the possibility of using a relational database management system for data persistence (mySQL or SQL Server). In addition, C#/MVC may be used for a service layer. React/Redux will be used the User Interface and for managing State.
 
-The data model will consist of
+The data model will consist of 14 database tables (or JSON objects, depending on how the data is persisted). There of those are reference tables (lookup tables) and the other 11 are transactional tables.
+
 Beyond the Minimal Viable Product, the following features could be added:
 
 - Configuration of reporting fields.
@@ -38,7 +39,7 @@ Beyond the Minimal Viable Product, the following features could be added:
 
 ## The Universe of Globys G3 Configuration
 
-[<img src="src/assets/images/GlobysProductConfiguration.jpg" width=700 alt="Globys G3 Product Configuration Diagram">]
+<img src="src/assets/images/GlobysProductConfiguration.jpg" width=700 alt="Globys G3 Product Configuration Diagram">
 
 ## Component Tree
 
@@ -50,25 +51,25 @@ App
 <br>
 --------> TopNav
 <br>
---------> Show Client Information
+--------> Show Client Information ("/showclients")
 <br>
---------> Add Client Information
+--------> Add Client Information ("/addclient")
 <br>
---------> Edit Client Information
+--------> Edit Client Information ("/editclient")
 <br>
---------> Delete Client Information
+--------> Delete Client Information ("/deleteclient")
 <br>
---------> Show Products
+--------> Show Products ("/showproducts")
 <br>
---------> Add Products
+--------> Add Products ("/addproduct")
 <br>
---------> Edit Products
+--------> Edit Products ("/editproduct")
 <br>
---------> Delete Products
+--------> Delete Products ("/deleteproduct")
 <br>
---------> Configure Permissions
+--------> Configure Permissions ("/configurepermissions")
 <br>
---------> Configuration Customizations
+--------> Configuration Customizations ("/configurecustomizations")
 <br>
 --------> About ("/about")
 <br>
