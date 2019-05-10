@@ -10,161 +10,140 @@
 
 ---
 
-## Description
+## Project Description
 
-_eHappenings_ is a re-development of an Angular-based project that was itself a redevelopment of a C#-based team project from the Epicodus C# class. The C# code was converted to javascript and Angular and the C# Model/View/Controller structure was converted to the Angular Model/View/Component structure. Then for this project, the Angular and Typescript code was converted to React and JSX. Much of the styling has been kept from the C# project and credit for the styling goes to Clara Munro and Micaela Jawor. Credit for the format of this README largely goes to Shawn Lunsford.
+The _Globys G3 Configuration Tool_ is a prototype project for developing a configuration tool for the Globys G3 product. G3 Configuration is a very large, complex body of data and business rules that controls G3 functionality and the user experience. There are 51 areas of configuration and most "configurables" fall under the categories of Reporting, Permissions, Customizations, Client System Settings, Localization, Messaging and Security. There are ~160 database tables that contain configuration data. At least 60 must be populated correctly in order for G3 to be fully functional. The Minimal Viable Product for this project will focus on Permissions and Customizations which will also include configuration of Clients, Products and Groups. The other configurables will be represented in disabled buttons in a navigation bar in order to provide a view into what a fully-featured tool would look like. Minimum features will include:
 
-The development process in React versus Angular seems more straightforward. More componentized. A somewhat gentler learning curve.
+- Enable Create/Read/Update/Delete operations for Clients, Products and Groups.
+- Enable configuration product permissions at the Client, Product, Product/UserType and Group levels.
+- Enable product customizations at the Client, Product and Group levels.
 
-## Notes
+At the very least, the project will use Firebase for data persistence and project deployment with the possibility of using a relational database management system for data persistence (mySQL or SQL Server). In addition, C#/MVC may be used for a service layer. React/Redux will be used the User Interface and for managing State.
 
-- Understanding how and when styling gets applied can be challenging.
-- Incorporating bootstrap styling continues to be a bit confusing.
-- Lint doesn't seem to handle image files very well.
-- So far, React seems less "busy" than Angular. That's a good thing.
+The data model will consist of
+Beyond the Minimal Viable Product, the following features could be added:
+
+- Configuration of reporting fields.
+- Configuration of Detail Reports.
+- Configuration of Summary Calculations and Summary Reports.
 
 ## Component Tree
 
 App
 <br>
-----> Welcome ("/")
-<br>
-----> About ("/about")
-<br>
-----> Error404
-<br>
-----> Main ("/main")
+----> Main ("/")
 <br>
 --------> Header
 <br>
---------> SideNav
-<br>
---------> Events ("/events") &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-------- EventData
-<br>
-----------------> Header
-<br>
-----------------> SideNav
-<br>
-----------------> Event
-<br>
-----------------> AddEventForm
-<br>
-----------------> EditEventForm
-<br>
-----------------> DeleteEventForm
-<br>
-----------------> SearchEvent
-<br>
---------> Menus ("/menus") &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-------- MenuData
-<br>
-----------------> Header
-<br>
-----------------> SideNav
-<br>
-----------------> Menu
-<br>
-----------------> AddMenuForm
-<br>
-----------------> EditMenuForm
-<br>
-----------------> DeleteMenuForm
-<br>
-----------------> SearchMenu
-<br>
---------> Dishes ("/dishes") &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-------- DishData
-<br>
-----------------> Header
-<br>
-----------------> SideNav
-<br>
-----------------> Dish
-<br>
-----------------> AddDishForm
-<br>
-----------------> EditDishForm
-<br>
-----------------> DeleteDishForm
-<br>
-----------------> SearchDish
-<br>
---------> Foods ("/foods") &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-------- FoodData
-<br>
-----------------> Header
-<br>
-----------------> SideNav
-<br>
-----------------> Food
-<br>
-----------------> AddFoodForm
-<br>
-----------------> EditFoodForm
-<br>
-----------------> DeleteFoodForm
-<br>
-----------------> SearchFood
-<br>
---------> Stores ("/stores") &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-------- StoreData
-<br>
-----------------> Header
-<br>
-----------------> SideNav
-<br>
-----------------> Store
-<br>
-----------------> AddStoreForm
-<br>
-----------------> EditStoreForm
-<br>
-----------------> DeleteStoreForm
-<br>
-----------------> SearchStore
-<br>
---------> Tasks ("/tasks") &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-------- TaskData
-<br>
-----------------> Header
-<br>
-----------------> SideNav
-<br>
-----------------> Task
-<br>
-----------------> AddTaskForm
-<br>
-----------------> EditTaskForm
-<br>
-----------------> DeleteTaskForm
-<br>
-----------------> SearchTask
-<br>
---------> Invitees ("/invitees") &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-------- InviteeData
-<br>
-----------------> Header
-<br>
-----------------> SideNav
-<br>
-----------------> Invitee
-<br>
-----------------> AddInviteeForm
-<br>
-----------------> EditInviteeForm
-<br>
-----------------> DeleteInviteeForm
-<br>
-----------------> SearchInvitee
-<br>
---------> RecipeSearchForm ("/searchrecipes")
-<br>
-----------------> Header
-<br>
-----------------> SideNav
-<br>
---------> Recipes ("/recipes") &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<-------- API Call
-<br>
-----------------> Header
-<br>
-----------------> SideNav
-<br>
-----------------> Recipe
-<br>
+--------> TopNav
+<br>
+--------> Show Client Information
+<br>
+--------> Add Client Information
+<br>
+--------> Edit Client Information
+<br>
+--------> Delete Client Information
+<br>
+--------> Show Products
+<br>
+--------> Add Products
+<br>
+--------> Edit Products
+<br>
+--------> Delete Products
+<br>
+--------> Configure Permissions
+<br>
+--------> Configuration Customizations
+<br>
+--------> About ("/about")
+<br>
+--------> Error404
+<br>
+
+## Database Tables
+
+<details>
+<summary>Click Here for Details</summary>
+<table>
+    <tr>
+        <th>Table Name</th>
+        <th>Column Name</th>
+        <th>Data Type</th>
+    </tr>
+    <tr>
+        <td>clients</td>
+        <td>client_id<br>nme<br>encrypt_key<br>external_id<br>client_ad_nme<br>login<br>password<br>validation_question_1<br>validation_question_2<br>validation_question_3<br>validation_question_4<br>validation_question_5<br>preproc_min<br>default_language_id<br>default_currency_id<br>default_currency_use_symbol<br>default_email_address<br>public_encryption_key<br>public_encryption_type<br>user_acct_flg<br>pwd_history_count<br>min_pwd_days<br>max_pwd_days<br>sso_redirect_url<br>cat_acct_search_type<br>sso_redirect_querystring_flg</td>
+        <td>smallint<br>nvarchar(80)<br>nvarchar(510)<br>int<br>nvarchar(60)<br>nvarchar(100)<br>nvarchar(100)<br>nvarchar(2000)<br>nvarchar(2000)<br>nvarchar(2000)<br>nvarchar(2000)<br>nvarchar(2000)<br>int<br>tinyint<br>smallint<br>tinyint<br>nvarchar(160)<br>nvarchar(8000)<br>smallint<br>tinyint<br>int<br>int<br>int<br>nvarchar(2048)<br>tinyint<br>tinyint</td>
+    </tr>
+    <tr>
+        <td>products</td>
+        <td>product_id<br>product_name<br>client_id<br>display_name<br>display_order<br>display_help_text<br>product_code<br>piv_flg</td>
+        <td>int<br>nvarchar(8000)<br>smallint<br>nvarchar(8000)<br>tinyint<br>nvarchar(8000)<br>nvarchar(8000)<br>tinyint<br></td>
+    </tr>
+    <tr>
+        <td>group</td>
+        <td>group_id<br>group_name<br>client_id<br>viewable_flg<br>group_priority</td>
+        <td>int<br>nvarchar(8000)<br>smallint<br>tinyint<br>smallint</td>
+    </tr>
+    <tr>
+        <td>permissions</td>
+        <td>permission_id<br>nme<br>type<br>user_flg<br>permission_category_id<br>description<br>permission_description</td>
+        <td>smallint<br>nvarchar(8000)<br>nchar<br>bit<br>int<br>nvarchar(8000)<br>nvarchar(8000)</td>
+    </tr>
+    <tr>
+        <td>permission_categories</td>
+        <td>permission_category_id<br>permission_category_name<br>display_order</td>
+        <td>int<br>nvarchar(8000)<br>int</td>
+    </tr>
+    <tr>
+        <td>client_permission</td>
+        <td>client_id<br>permission_id</td>
+        <td>smallint<br>smallint</td>
+    </tr>
+    <tr>
+        <td>product_permission</td>
+        <td>product_id<br>permission_id</td>
+        <td>int<br>smallint</td>
+    </tr>
+    <tr>
+        <td>product_permission_user_type</td>
+        <td>product_id<br>permission_id<br>user_type</td>
+        <td>int<br>int<br>int</td>
+    </tr>
+    <tr>
+        <td>group_permission</td>
+        <td>group_id<br>permission_id</td>
+        <td>int<br>smallint</td>
+    </tr>
+    <tr>
+        <td>custom_values</td>
+        <td>custom_value_id<br>custom_type_id<br>description<br>char_value<br>num_value<br>default_value</td>
+        <td>int<br>smallint<br>nvarchar(8000)<br>nvarchar(8000)<br>numeric<br>bit</td>
+    </tr>
+    <tr>
+        <td>custom_types</td>
+        <td>custom_type_id<br>custom_type_name<br>custom_input_type<br>custom_type_category_id<br>custom_type_description</td>
+        <td>smallint<br>nvarchar(8000)<br>nchar<br>int<br>nvarchar(8000)</td>
+    </tr>
+    <tr>
+        <td>client_custom_value</td>
+        <td>client_id<br>custom_value_id<br>custom_type_id</td>
+        <td>smallint<br>int<br>smallint</td>
+    </tr>
+    <tr>
+        <td>product_custom_value</td>
+        <td>product_id<br>custom_value_id<br>custom_type_id</td>
+        <td>int<br>int<br>smallint</td>
+    </tr>
+    <tr>
+        <td>group_custom_value</td>
+        <td>group_id<br>custom_value_id<br>custom_type_id<br>intersect_custom_value_id</td>
+        <td>int<br>int<br>smallint<br>int</td>
+    </tr>
+</table>
+</details>
 
 ## Technical Features
 
