@@ -36,6 +36,10 @@ Beyond the Minimal Viable Product, the following features could be added:
 - "Permissions" control what users can do and see in G3 and can be applied at the Client level, to one or more Products, to one or more User Types for each product and to one or more Groups.
 - "Customizations" are used for customizing the behavior and appearance of the application and can be applied at the Client level, to one or more Products and to one or more Groups.
 
+## The Universe of Globys G3 Configuration
+
+[<img src="src/assets/images/GlobysProductConfiguration.jpg" width=100 alt="Globys G3 Product Configuration Diagram">]
+
 ## Component Tree
 
 App
