@@ -38,7 +38,7 @@ Beyond the Minimal Viable Product, the following features could be added:
 
 ## The Universe of Globys G3 Configuration
 
-[<img src="src/assets/images/GlobysProductConfiguration.jpg" width=100 alt="Globys G3 Product Configuration Diagram">]
+[<img src="src/assets/images/GlobysProductConfiguration.jpg" width=700 alt="Globys G3 Product Configuration Diagram">]
 
 ## Component Tree
 
