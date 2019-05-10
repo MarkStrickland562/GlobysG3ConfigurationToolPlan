@@ -41,6 +41,10 @@ Beyond the Minimal Viable Product, the following features could be added:
 
 <img src="src/assets/images/GlobysProductConfiguration.jpg" width=700 alt="Globys G3 Product Configuration Diagram">
 
+## The Globys Client Administration Tool (for Reference)
+
+<img src="src/assets/images/GlobysClientAdministrationTool.png" width=700 alt="Globys G3 Client Administration Tool">
+
 ## Component Tree
 
 App
