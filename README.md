@@ -195,9 +195,13 @@ This assumes that node is already installed, but verify with "node -v".
 <br><br>
 </details>
 
-##### 3) Develop mock data for the seven models.
+##### 3) Develop mocked-up screenshots to show the UI model.
 
-##### 4) Create components for showing, adding, editing, deleting and searching for model-related objects.
+##### 4) Obtain reference data from a Globys database.
+
+##### 5) Develop mock data for the 11 transactional tables.
+
+##### 6) Create components for showing, adding, editing and deleting data.
 
 ## Setup and Use
 
@@ -234,15 +238,15 @@ This assumes that node is already installed, but verify with "node -v".
 
 #### Download the Repository
 
-1. Clone [this repository](https://github.com/MarkStrickland562/EventPlannerReact):
+1. Clone [this repository](https://github.com/MarkStrickland562/GlobysG3ConfigurationTool):
 
-   \$ git clone https://github.com/MarkStrickland562/EventPlannerReact.git
+   \$ git clone https://github.com/MarkStrickland562/GlobysG3ConfigurationTool.git
 
 #### Install, build and run the application
 
 1. Navigate to the application root directory:
 
-   \$ cd EventPlannerReact
+   \$ cd GlobysG3ConfigurationTool
 
 2. Install the required packages:
 
@@ -252,7 +256,7 @@ This assumes that node is already installed, but verify with "node -v".
 
    \$ npm run start
 
-   Then navigate to locahost:8080 in the browser.
+   Then navigate to localhost:8080 in the browser.
 
 4. To lint the code:
 
