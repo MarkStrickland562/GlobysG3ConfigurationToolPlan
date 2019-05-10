@@ -27,6 +27,15 @@ Beyond the Minimal Viable Product, the following features could be added:
 - Configuration of Detail Reports.
 - Configuration of Summary Calculations and Summary Reports.
 
+## Business Rules
+
+- A "Client" is a Globys customer.
+- A "Product" is a container for G3 features, permissions, customizations, etc.
+- "User Types" are 1=admin user, 2=regular user, 3=customer service user.
+- "Groups" are named groupings of Globys customers' customers and their accounts.
+- "Permissions" control what users can do and see in G3 and can be applied at the Client level, to one or more Products, to one or more User Types for each product and to one or more Groups.
+- "Customizations" are used for customizing the behavior and appearance of the application and can be applied at the Client level, to one or more Products and to one or more Groups.
+
 ## Component Tree
 
 App
@@ -83,7 +92,7 @@ App
         <td>int<br>nvarchar(8000)<br>smallint<br>nvarchar(8000)<br>tinyint<br>nvarchar(8000)<br>nvarchar(8000)<br>tinyint<br></td>
     </tr>
     <tr>
-        <td>group</td>
+        <td>groups</td>
         <td>group_id<br>group_name<br>client_id<br>viewable_flg<br>group_priority</td>
         <td>int<br>nvarchar(8000)<br>smallint<br>tinyint<br>smallint</td>
     </tr>
@@ -202,11 +211,14 @@ This assumes that node is already installed, but verify with "node -v".
 <li>eslint-plugin-react 7.12.4</li>
 <li>file-loader 1.1.6</li>
 <li>html-webpack-plugin 2.29.0</li>
+<li>jest 20.0.4</li>
 <li>prop-types 15.5.10</li>
 <li>react 15.5.4</li>
 <li>react-dom 15.5.4</li>
 <li>react-hot-loader 3.0.0-beta.7</li>
+<li>react-redux 5.0.6</li>
 <li>react-router-dom 4.0.0</li>
+<li>redux 3.7.2</li>
 <li>styled-jsx 3.2.1</li>
 <li>url-loader 0.6.2</li>
 <li>uuid 3.2.1</li>
